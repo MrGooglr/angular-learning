@@ -10,7 +10,7 @@ Angular 10 - Basics learning and code.
 
 + Install Node and npm.
 + Using Angular CLI 10.0.4 
-Use ```npm install -g @angular/cli``` to install the latest version using npm | Link : [How to update to latest version if already installed](https://stackoverflow.com/questions/43931986/how-to-upgrade-angular-cli-to-the-latest-version)
++ Use ```npm install -g @angular/cli``` to install the latest version using npm | Link : [How to update to latest version if already installed](https://stackoverflow.com/questions/43931986/how-to-upgrade-angular-cli-to-the-latest-version)
 + The very basics of Angular App is the ***Modules*** which then contains then contains the ***components***. Each component must contains two things, one is ***template (which is view/HTML)*** and other one is ***Class (A TrypeScript class)***, which contains logic to what's going to render on the Template.
 + As Angular is written using TypeScript, a very basic knowledge of TypeScript is required to work with Angular.
 
