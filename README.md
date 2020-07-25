@@ -23,7 +23,7 @@ Please refer [here](https://angular.io/guide/architecture) for more.
 ### Components
 
 + Angular components are consits of *componentName.componet.ts*, *componentName.componet.html*,*componentName.componet.css*.
-+ run ```ng g c component-name```
++ run ```ng g c component-name``` or you can also run ```ng generate component component-name```
 + the above command will generate(g) *component-name* component(c) for you inside app folder and also update the file *app.module.ts*.
 + The component module class file (the TypeScript file) is consist of a Decorator ( @Component() ) that will tell Angular app that the just below Class is actually a Component for the app. The @Component() decorator identifies the class immediately below it as a component, and provides the template and related component-specific metadata.
 
@@ -41,6 +41,9 @@ The following decorators can declare Angular class types:
 
 + Class field decorators are decorator statement immediately before a field in a class definition that declares the type of that field. Some examples are ```@Input``` and ```@Output```.
 
+<p align="center">
+<img src="images/overview2.png" alt="basics" />
+</p>
 
 ### Data Binding in Angular
 
@@ -51,3 +54,35 @@ The following decorators can declare Angular class types:
 **Property binding** lets you interpolate(insert) values that are computed from your application data into the HTML.
 
 + Angular supports two-way data binding, meaning that changes in the DOM, such as user choices, are also reflected in your program data.
+
+#### Interpolation
+
++ With interpolation we can bind data into template. Using ```{{ }}``` we can evaluate expressions (means ```{{2+2}}``` is valid),concatnate strings like ```{{ "Hello "+name }}``` or call methods defined in our class or can call some predefined JavaScript functions too like ```{{name.length}}```.
++ What we can't do with interpolation is that we cannot call global JavaScript funtions like ```{{ window.location.href }}``` is invalid. Also, assignments to the variable here are invalid too. Means ```{{ a = 2+2 }}``` is invalid and give error on console.
+
+#### Property Binding
+
++ **HTML Attributes and DOM Properties** are not the same. Attribute initialize the DOM properties and that's it. Attributes value cannot change once they are initialized.
+
++ As we are binding data to the DOM properties and not the HTML attributes in Angular, this distinctions should be clear.
+
++ let's bind a data to the id property of the input html field:
+```<input [id]="myId" type="text" value="Aniket" >```
+
+> What I have done here is binded **myId property** to the attribute id of this input element. Although the attribute is of HTML but the myId property do affaect the DOM insted of attribute, hence it's called property binding.
+
++ The same can also be done using interpolation as:
+```<input id="{{ myId }}" type="text" value="Aniket" >```
+The generated source will be same for both.
+
+> ##### Why we need property binding then if we can use interpolation?
+
+Because not all type of values can be bind using interpolation. **Interpolation only works with string values**. HTML attributes do expect some boolean values too.
+
+Example:
+```<input id="{{ myId }}" [disabled]="false" type="text" value="Aniket" >``` 
+
+
++ Binding also got another syntax like instead of [] you can also use bind-attributeName.
+```<input bind-id="myId" type="text" value="Aniket" >```
+This is same as ```<input [id]="myId" type="text" value="Aniket" >```
