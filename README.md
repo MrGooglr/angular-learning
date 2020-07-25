@@ -57,8 +57,9 @@ The following decorators can declare Angular class types:
 
 #### Interpolation
 
-+ With interpolation we can bind data into template. Using ```{{ }}``` we can evaluate expressions (means ```{{2+2}}``` is valid),concatnate strings like ```{{ "Hello "+name }}``` or call methods defined in our class or can call some predefined JavaScript functions too like ```{{name.length}}```.
-+ What we can't do with interpolation is that we cannot call global JavaScript funtions like ```{{ window.location.href }}``` is invalid. Also, assignments to the variable here are invalid too. Means ```{{ a = 2+2 }}``` is invalid and give error on console.
++ With interpolation we can bind data into template. Using {{ }} we can evaluate expressions (means {{2+2}} is valid),concatnate strings like {{ "Hello "+name }} or call methods defined in our class or can call some predefined JavaScript functions too like {{name.length}}.
+
++ What we can't do with interpolation is that we cannot call global JavaScript funtions like  {{ window.location.href }} is invalid. Also, assignments to the variable here are invalid too. Means {{ a = 2+2 }} is invalid and give error on console.
 
 #### Property Binding
 
@@ -72,7 +73,7 @@ The following decorators can declare Angular class types:
 > What I have done here is binded **myId property** to the attribute id of this input element. Although the attribute is of HTML but the myId property do affaect the DOM insted of attribute, hence it's called property binding.
 
 + The same can also be done using interpolation as:
-```<input id="{{ myId }}" type="text" value="Aniket" >```
+`<input id="{{ myId }}" type="text" value="Aniket" >`
 The generated source will be same for both.
 
 > ##### Why we need property binding then if we can use interpolation?
@@ -80,7 +81,7 @@ The generated source will be same for both.
 Because not all type of values can be bind using interpolation. **Interpolation only works with string values**. HTML attributes do expect some boolean values too.
 
 Example:
-```<input id="{{ myId }}" [disabled]="false" type="text" value="Aniket" >``` 
+`<input id="{{ myId }}" [disabled]="false" type="text" value="Aniket" >` 
 
 
 + Binding also got another syntax like instead of [] you can also use bind-attributeName.
