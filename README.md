@@ -132,19 +132,13 @@ Angular supplies a number of ***built-in directives*** that begin with the **ng*
 `<h2 [style.color]="isDanger ? 'red' : 'green' "></h2>`
 
 > Please note that we use camelCasing inside objects and don't use `-` in css properties. So:
-`
-	objectHoldingMultipleValues = {
+`objectHoldingMultipleValues = {
 		fontStyle:"italic",
 		color:"red"
-	}
-`
-is valid, while
-`
-	objectHoldingMultipleValues = {
+	}`is valid, while `objectHoldingMultipleValues = {
 		font-style:"italic",
 		color:"red"
-	}
-` is invalid.
+	}` is invalid.
 
 
 #### Event Binding
