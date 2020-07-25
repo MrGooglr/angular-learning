@@ -3,7 +3,7 @@ Angular 10 - Basics learning and code.
 </h1>
 
 <p align="center">
-	<img src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png" alt="angular-logo">
+	<img src="https://sigao.io/wp-content/uploads/2018/08/angular-card.png" alt="angular-logo">
 </p>
 
 ### Start
