@@ -43,6 +43,7 @@ The following decorators can declare Angular class types:
 + There are two types of data binding:
 
 **Event binding** lets your app respond to user input in the target environment by updating your application data.
+
 **Property binding** lets you interpolate(insert) values that are computed from your application data into the HTML.
 
 + Angular supports two-way data binding, meaning that changes in the DOM, such as user choices, are also reflected in your program data.
