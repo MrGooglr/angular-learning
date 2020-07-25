@@ -1,4 +1,4 @@
-<h1 style="text-align:center">
+<h1 align="center">
 ANGULAR 10 - Basics learning and code.
 </h1>
 
