@@ -1,6 +1,10 @@
 <h1 align="center">
-ANGULAR 10 - Basics learning and code.
+Angular 10 - Basics learning and code.
 </h1>
+
+<p align="center">
+	<img src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png" alt="angular-logo">
+</p>
 
 ### Start
 
