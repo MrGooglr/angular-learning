@@ -10,7 +10,7 @@ Angular 10 - Basics learning and code.
 
 + Install Node and npm.
 + Using Angular CLI 10.0.4 
-+ Use ```npm install -g @angular/cli``` to install the latest version using npm.
++ Use ```npm install -g @angular/cli``` to install the latest version using npm | Link : [How to update to latest version if already installed](https://stackoverflow.com/questions/43931986/how-to-upgrade-angular-cli-to-the-latest-version)
 + The very basics of Angular App is the ***Modules*** which then contains then contains the ***components***. Each component must contains two things, one is ***template (which is view/HTML)*** and other one is ***Class (A TrypeScript class)***, which contains logic to what's going to render on the Template.
 + As Angular is written using TypeScript, a very basic knowledge of TypeScript is required to work with Angular.
 
@@ -87,3 +87,25 @@ Example:
 + Binding also got another syntax like instead of [] you can also use bind-attributeName.
 ```<input bind-id="myId" type="text" value="Aniket" >```
 This is same as ```<input [id]="myId" type="text" value="Aniket" >```
+
+
+#### Binding Classes to the HTML template.
+
++ Although, direct css classes can be bind to the HTML as `<h2 class="class-name"></h2>`, the same can be done as : `<h2 [class]="someClassPropertyFromClass"></h2>`
+
+> You cannot use both the ways though.
+
++ There is another way to toggle between classes available as :
+`<h2 [class.name-of-class]="booleanClassVariable"></h2>`
+
+> #### What about conditionally applying multiple classes?
+
+Nice question, for that we have **directives**.
+
+> **Directive :** A class that can modify the structure of the DOM or modify attributes in the DOM and component data model. A directive class definition is immediately preceded by a @Directive() decorator that supplies metadata.
+Angular supplies a number of built-in directives that begin with the **ng** prefix. You can also create new directives to implement your own functionality. You associate a selector (an HTML tag such as <my-directive>) with a custom directive, thereby extending the template syntax that you can use in your apps.
+Read [here](https://angular.io/guide/glossary#directive) for more.	
+
++ In simple terms directives are just custom html attributes that have some special functionalities associated with them.
+
++ This is usefull as by this we can toggle between multiple classes based on some user interaction or state of the Application.
