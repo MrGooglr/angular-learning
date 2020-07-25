@@ -10,6 +10,7 @@
 
 + Use ```npm install -g @angular/cli``` to install the latest version using npm | Link : [How to update to latest version if already installed](https://stackoverflow.com/questions/43931986/how-to-upgrade-angular-cli-to-the-latest-version)
 
+
 + The very basics of Angular App is the ***Modules*** which then contains the **components**. Each component must contains two things, one is ***template (which is view/HTML)*** and other one is ***Class (A TrypeScript class)***, which contains logic to what's going to render on the Template.
 
 + As Angular is written using TypeScript, a very basic knowledge of TypeScript is required to work with Angular.
@@ -143,4 +144,40 @@ Angular supplies a number of ***built-in directives*** that begin with the **ng*
 
 #### Event Binding
 
-+ 
+As data can flow in two-ways in an Angular app, to capture user-events like mouse clicks and keyboard events, we make use of Even binding.
+
++ The sytax for this is 
+`<button (domEvent)="eventHandler()">Click Me!</button>`
+
+> `domEvent` can be `click`,`change`,`mouseUp` etc as available. `eventHandler()` is nothing but a method inside the class.
+
++ To get the information regarding the raised DOM event we can use `eventHandler($event)` and `$event` will give us the information. Please note that `$event` is a special variable in Angular that holds the information of the raised DOM event.
+
+
+To perform some operations based on user inputs and interactions inside the Application, we need to collect the data entered by the user at template and take that data to the class.
+For this Angular provide us with ***Template Reference Variables***.
+
+Let's understand this with an example:
+
+In my `xyz.component.ts` class suppose I added inside ```@Component({
+	template = `
+		<input type="text">
+		<button>Send!</button>
+	`
+})```
+
++ `#variableName` is the way to declare the template reference variable.
+
+What I want now is to send the data entered inside the input on the click of the button to my class.
+
+We can use the template refrence variable as: ```@Component({
+	template = `
+		<input #variableHolder type="text">
+		<button (click)="logMessage(variableHolder.value)" >Send!</button>
+	`
+})```
+
++ What this `#variableHolder` template reference variable holds is the whole `<input type="text">` and with `variableHolder.value` we only retrived the `value` DOM property of the variable. 
+
+
+#### Two Way Binding
