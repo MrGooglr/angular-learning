@@ -181,3 +181,33 @@ We can use the template refrence variable as: ```@Component({
 
 
 #### Two Way Binding
+
+As we are already familier with Data Binding (sending information from Class to template) and Event Binding (sending information from template to Class) and how we can use to get the data from user and set it accordingly in our Class and update the properties in template.
+
+Angular do provide a way (a directive `ngModel`) to do the both task at once and that's two way binding.
+
+<p align="center">
+<img src="images/two-way2.png" alt="two-way-data-binding" />
+</p>
+
+
++ The syantax of which is like `<input [(ngModel)]="propertyInClass" type="text">` this way `propertyInClass` is binded in two ways.
+
++ FormsModule is where ngModel directive is available so please import it on app.module.ts file before using it.
+`import { FormsModule } from '@angular/Forms'` and add `FormsModule` in `imports:[]` array.
+
+Next we are going to read about build-in directives in Angular.
+
+> ### Please read [here for more](https://angular.io/guide/template-syntax) on syntaxes in template.
+
+
+### Build-in Directives in Angular
+
+Angular provides us with many build-in directives for our use. Although we can always create custom directive for our use.
+
+We already encountered with some of them like `ngModel` and `ngStyle`  and `ngClass`. 
+
+
+
+
+
