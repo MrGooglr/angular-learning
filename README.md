@@ -207,7 +207,37 @@ Angular provides us with many build-in directives for our use. Although we can a
 
 We already encountered with some of them like `ngModel` and `ngStyle`  and `ngClass`. 
 
+Let's start with Structural Directives.
+
+#### Structural Directives
+
+Those directives that enable us to add or remove the HTML element from the DOM are structural directives. Let's start with the common and basic ones i:e; `ngIf`,`ngFor` and `ngSwitch`.
+
+> As name suggest, `ngIf` and `ngFor` can used to conditionally render the elements while `ngFor` is used to render the list of said component.
+
+#### ngIf
+
+The syntax to use the tag is `<name-of-tag *ngIf="true"></name-of-tag>`. The `true` can be replaced with any variable or condition that evaluate to either `true` or `false`.
+
+> Any JS applied to the element will not work if element is set to `false` using `ngIf` as it just doesn't render the DOM element. (not same as CSS `display:none` property).
+
+To provide `else` block in it we can do something like:
+`<h2 *ngIf="someValue; else elseBlockRefre"> Test </h2>
+<ng-template #elseBlockRefre>
+<h2>from Else block</h2>
+</ng-template>` 
+
+`ngIf` directive can also be used from other tag to display some-other tag like:
+
+`<div *ngIf="someCondition; then someVar; else someOtherVar"></div>`
+
+`<ng-template #someVar>
+<h2>from then</h2>
+</ng-template>`
+
+`<ng-template #someOtherVar>
+<h2>from Else</h2>
+</ng-template>`
 
 
-
-
+#### ngSwitch
