@@ -205,6 +205,11 @@ Next we are going to read about build-in directives in Angular.
 
 Angular provides us with many build-in directives for our use. Although we can always create custom directive for our use.
 
+> There are three kinds of directives in Angular:
+1. **Components directives** with a template.
+1. **Structural directives** change the DOM layout by adding and removing DOM elements.
+1. **Attribute directives** change the appearance or behavior of an element, component, or another directive. [Read Here](https://angular.io/guide/attribute-directives).
+
 We already encountered with some of them like `ngModel` and `ngStyle`  and `ngClass`. 
 
 Let's start with Structural Directives.
@@ -222,22 +227,71 @@ The syntax to use the tag is `<name-of-tag *ngIf="true"></name-of-tag>`. The `tr
 > Any JS applied to the element will not work if element is set to `false` using `ngIf` as it just doesn't render the DOM element. (not same as CSS `display:none` property).
 
 To provide `else` block in it we can do something like:
-`<h2 *ngIf="someValue; else elseBlockRefre"> Test </h2>
-<ng-template #elseBlockRefre>
-<h2>from Else block</h2>
-</ng-template>` 
+	`<h2 *ngIf="someValue; else elseBlockRefre"> Test </h2>
+	<ng-template #elseBlockRefre>
+		<h2>from Else block</h2>
+	</ng-template>` 
 
 `ngIf` directive can also be used from other tag to display some-other tag like:
 
 `<div *ngIf="someCondition; then someVar; else someOtherVar"></div>`
 
 `<ng-template #someVar>
-<h2>from then</h2>
+	<h2>from then</h2>
+</ng-template>
+<ng-template #someOtherVar>
+	<h2>from Else</h2>
 </ng-template>`
 
-`<ng-template #someOtherVar>
-<h2>from Else</h2>
-</ng-template>`
 
 
 #### ngSwitch
+
+This directive is used to conditionally case based rendering of the element.
+
+Look at the example below:
+
+`<div [ngSwitch]="bindProperty">
+	<div *ngSwitchCase="red">Test case.</div>
+	<div *ngSwitchCase="yellow">Test case.</div>
+	<div *ngSwitchCase="blue">Test case.</div>
+</div>`
+
+> Do note the syntax.
+
+#### ngFor
+
+For repitative list rendering, the `ngFor` is being used.
+
+`<div *ngFor="let property of source">
+	<h2>{{ property }}</h2>
+</div>`
+
+Some other useful inbuild properties are: 
+
+
+`<div *ngFor="let property of source; last as l">
+	<h2>{{ l }} {{ property }}</h2>
+</div>`
+
+`<div *ngFor="let property of source; first as f">
+	<h2>{{ f }} {{ property }}</h2>
+</div>`
+
+`<div *ngFor="let property of source; index as i">
+	<h2>{{ i }} {{ property }}</h2>
+</div>`
+
+> index will start from 0, wile `last` and `first` keywords are boolean return type. Similarly we can use `odd` and `even` too.
+
+
+### Component Interaction
+
+The components are always nested into one-another and to get data from parent to child component or child to parent component, we have `@Input` and `@Output` properties.
+
+<p align="center">
+<img src="images/comp-inter.png" alt="component-interaction" />
+</p>
+
+> Read [here for more](https://angular.io/guide/inputs-outputs).
+
