@@ -264,25 +264,25 @@ Look at the example below:
 For repitative list rendering, the `ngFor` is being used.
 
 `<div *ngFor="let property of source">
-	<h2>{{ property }}</h2>
+	<h2>\{\{ property \}\}</h2>
 </div>`
 
 Some other useful inbuild properties are: 
 
 
 `<div *ngFor="let property of source; last as l">
-	<h2>{{ l }} {{ property }}</h2>
+	<h2>\{\{ l \}\} \{\{ property \}\}</h2>
 </div>`
 
 `<div *ngFor="let property of source; first as f">
-	<h2>{{ f }} {{ property }}</h2>
+	<h2>\{\{ f \}\} \{\{ property \}\}</h2>
 </div>`
 
 `<div *ngFor="let property of source; index as i">
-	<h2>{{ i }} {{ property }}</h2>
+	<h2>\{\{ i \}\} \{\{ property \}\}</h2>
 </div>`
 
-> index will start from 0, wile `last` and `first` keywords are boolean return type. Similarly we can use `odd` and `even` too.
+> index will start from 0, while `last` and `first` keywords are boolean return type. Similarly we can use `odd` and `even` too.
 
 
 ### Component Interaction
