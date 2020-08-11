@@ -371,3 +371,15 @@ It's quite difficult for developers to keep track of all this in a complax appli
 <p align="center">
 <img src="images/http-mec.png" alt="http-mechanism" />
 </p>
+
+> The response we get back after http call is Observable. You can then cast this Observable into as per your need and then work with it. Read more about observables [here](https://angular.io/guide/observables)
+
+<p align="center">
+<img src="images/observables.png" alt="observables-understanding" />
+</p>
+
+Observable is nothing but the http response that arrive asynchronusly.
+
+<p align="center">
+<img src="images/observables2.png" alt="observables-understanding" />
+</p>
