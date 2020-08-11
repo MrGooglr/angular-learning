@@ -295,3 +295,74 @@ The components are always nested into one-another and to get data from parent to
 
 > Read [here for more](https://angular.io/guide/inputs-outputs).
 
+Sending data from Parent to Child is straight. On child selector at parent say `<app-test [parentData]="propertyNameOnParentClass"></app-test>`.
+At Child component declare a field using `@Input() public parentData;`
+Now we can use `\{\{parentData\}\}` at child component.
+
+Sending data from child to parent is done using `EventEmitter` class object as:
+
+`@Output() public childEvent = new EventEmitter();`
+
+Then with the action we can call some method with 
+`fireEvent(){
+	this,childEvent.event('Hello');
+}`
+
+Let's capture the event at Parent as 
+`<app-test (childEvent)="propertyName=$event" [parentData]="propertyNameOnParentClass"></app-test>`
+
+Now we can use `\{\{propertyName\}\}`.
+
+
+### Pipes
+
+Allow us to transform data before rendering. [Read here for more](https://angular.io/guide/pipes)
+
+### Services
+
+A service is a class with specific purpose. A service is typically a class with a narrow, well-defined purpose. It should do something specific and do it well.
+
+Ideally, a component's job is to enable the user experience and nothing more. A component should present properties and methods for data binding, in order to mediate between the view (rendered by the template) and the application logic (which often includes some notion of a model).
+
+We need services because:
+1. Share data across multiple components.
+1. Implement app logic.
+1. For external Interactions like connecting to database.
+
+[Read here for more](https://angular.io/guide/architecture-services)
+
+> We use services using Dependency Injection. Services are named as `name.service.ts`
+
+#### Dependency Injection
+
+*Angular doesn't enforce these principles. Angular does help you follow these principles by making it easy to factor your application logic into services and make those services available to components through dependency injection.*
+
+<p align="center">
+<img src="images/c-wo-di.png" alt="code-without-di" />
+</p>
+
+**Dependency Injection** is a coding pattern in which a class receives its dependencies from external sources rather than creating them itself.
+
+<p align="center">
+<img src="images/di-as-dp.png" alt="code-with-di" />
+</p>
+
+<p align="center">
+<img src="images/di-as-dp2.png" alt="code-with-di" />
+</p>
+
+Suppose to create a `Car()` we need various dependencies, say `new Car(dp1,dp2...,dpn)`
+now, some of these dependencies too needed some dependency. So before we create a car, we need to create all the dependencies and before we create dependencies, we need to create their dependency and so on.
+
+It's quite difficult for developers to keep track of all this in a complax application, hence Angular provides a way `injector` build-in self for DI as framework.
+
+<p align="center">
+<img src="images/di-as-frame.png" alt="di-as-framework" />
+</p>
+
+> `Providers` metadata in `app.module.ts` file is where we should register a class as injectable.
+
+***Why the service class have a `@Injectable()` decorator by itself?***
+`@Injectable()` defines in a service class that this service may have other injectable depenedency. So if we have to inject a service into another service, the class must have `@Injectable()` decorator.
+
+### HTTP and Observables
