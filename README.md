@@ -338,7 +338,7 @@ We need services because:
 *Angular doesn't enforce these principles. Angular does help you follow these principles by making it easy to factor your application logic into services and make those services available to components through dependency injection.*
 
 <p align="center">
-<img src="images/c-wo-di.png" alt="code-without-di" />
+<img src="images/c-wo-di.PNG" alt="code-without-di" />
 </p>
 
 **Dependency Injection** is a coding pattern in which a class receives its dependencies from external sources rather than creating them itself.
@@ -363,6 +363,11 @@ It's quite difficult for developers to keep track of all this in a complax appli
 > `Providers` metadata in `app.module.ts` file is where we should register a class as injectable.
 
 ***Why the service class have a `@Injectable()` decorator by itself?***
+
 `@Injectable()` defines in a service class that this service may have other injectable depenedency. So if we have to inject a service into another service, the class must have `@Injectable()` decorator.
 
 ### HTTP and Observables
+
+<p align="center">
+<img src="images/http-mec.png" alt="http-mechanism" />
+</p>
