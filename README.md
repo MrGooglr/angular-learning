@@ -13,7 +13,7 @@
 
 + The very basics of Angular App is the ***Modules*** which then contains the **components**. Each component must contains two things, one is ***template (which is view/HTML)*** and other one is ***Class (A TrypeScript class)***, which contains logic to what's going to render on the Template.
 
-+ As Angular is written using TypeScript, a very basic knowledge of TypeScript is required to work with Angular.
++ As Angular is written using TypeScript, knowledge of TypeScript is required to work with Angular.
 
 > Do note that Angular is a platform and client side framework which is is used for building single-page clinet applications using HTML and TypeScript.It implements core and optional functionality as a set of TypeScript libraries that you import into your apps.
 Please refer [here](https://angular.io/guide/architecture) for more.
@@ -23,11 +23,11 @@ Please refer [here](https://angular.io/guide/architecture) for more.
 
 ### Components
 
-+ Angular components are consits of ***componentName.componet.ts***, ***componentName.componet.html***,***componentName.componet.css***.
++ Angular components are consits of ***componentName.component.ts***, ***componentName.componet.html***,***componentName.component.css***.
 
 + Run ```ng g c component-name``` or you can also run ```ng generate component component-name```
 
-+ the above command will generate(g) *component-name* component(c) for you inside app folder and also update the file ***app.module.ts***.
++ The above command will generate(g) *component-name* component(c) for you inside app folder and also update the file ***app.module.ts***.
 
 + The component module class file (the TypeScript file) is consist of a Decorator ( `@Component()` ) that will tell Angular app that the just below Class is actually a Component for the app. The `@Component()` decorator identifies the class immediately below it as a component, and provides the template and related component-specific metadata.
 
